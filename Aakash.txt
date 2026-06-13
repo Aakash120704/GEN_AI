@@ -1,0 +1,129 @@
+STAR RIGHT ANGLE TRIANGLE
+*
+**
+***
+****
+*****
+STAR INVERSE RIGHT ANGLE TRIANGLE
+*****
+****
+***
+**
+*
+STAR LEFT ANGLE TRIANGLE
+    *
+   **
+  ***
+ ****
+*****
+STAR INVERSE LEFT ANGLE TRIANGLE
+*****
+ ****
+  ***
+   **
+    *
+PYRAMID TRIANGLE
+     
+    * 
+   * * 
+  * * * 
+ * * * * 
+INVERSE PYRAMID TRIANGLE
+* * * * 
+ * * * 
+  * * 
+   * 
+    
+RIGHT ANGLE TRIANGLE - ROW
+1
+22
+333
+4444
+55555
+RIGHT ANGLE TRIANGLE - COL
+
+1
+12
+123
+1234
+12345
+INVERSE RIGHT ANGLE TRIANGLE - ROW
+55555
+4444
+333
+22
+1
+INVERSE RIGHT ANGLE TRIANGLE - COL
+12345
+1234
+123
+12
+1
+
+LOWER RIGHT ANGLE TRIANGLE - row
+a
+bb
+ccc
+dddd
+eeeee
+LOWER RIGHT ANGLE TRIANGLE - col
+
+a
+ab
+abc
+abcd
+INVERSE LOWER RIGHT ANGLE TRIANGLE - row
+eeeee
+dddd
+ccc
+bb
+a
+INVERSE LOWER RIGHT ANGLE TRIANGLE - col
+abcd
+abc
+ab
+a
+
+UPPER RIGHT ANGLE TRIANGLE - ROW
+A
+BB
+CCC
+DDDD
+EEEEE
+UPPER RIGHT ANGLE TRIANGLE -COL
+
+A
+AB
+ABC
+ABCD
+ABCDE
+INVERSE UPPER RAT ROW
+----------------
+FFFFFF
+EEEEE
+DDDD
+CCC
+BB
+A
+INVERSE UPPER RAT COL
+----------------
+ABCDE
+ABCD
+ABC
+AB
+A
+
+RAT NAME ROW
+----------------
+D
+HH
+OOO
+NNNN
+IIIII
+RAT NAME COL
+----------------
+D
+Dh
+Dho
+Dhon
+Dhoni
