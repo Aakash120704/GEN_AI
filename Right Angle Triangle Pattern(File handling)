@@ -1,0 +1,313 @@
+def rat_star():
+    f=open('Aakash.txt','w')
+    f.write('STAR RIGHT ANGLE TRIANGLE\n')
+
+    for i in range(1,6):
+        for j in range(0,i):
+            f.write('*')
+        f.write('\n')
+
+    f.close()
+
+rat_star()
+
+
+def rat_Istar():
+    f=open('Aakash.txt','a+')
+    f.write('STAR INVERSE RIGHT ANGLE TRIANGLE\n')
+
+    for i in range(5,0,-1):
+        for j in range(0,i):
+            f.write('*')
+        f.write('\n')
+
+    f.close()
+
+rat_Istar()
+
+
+def lat_star():
+    f=open('Aakash.txt','a+')
+    f.write('STAR LEFT ANGLE TRIANGLE\n')
+
+    for i in range(1,6):
+        for j in range(5,i,-1):
+            f.write(' ')
+
+        for k in range(0,i):
+            f.write('*')
+
+        f.write('\n')
+
+    f.close()
+
+lat_star()
+
+
+def lat_Istar():
+    f=open('Aakash.txt','a+')
+    f.write('STAR INVERSE LEFT ANGLE TRIANGLE\n')
+
+    for i in range(5,0,-1):
+        for j in range(5,i,-1):
+            f.write(' ')
+
+        for k in range(0,i):
+            f.write('*')
+
+        f.write('\n')
+
+    f.close()
+
+lat_Istar()
+
+def pat_pyramid():
+    f=open('Aakash.txt','a+')
+    f.write('PYRAMID TRIANGLE\n')
+
+    for i in range(1,6):
+        for j in range(6,i,-1):
+            f.write(' ')
+
+        for k in range(1,i):
+            f.write('* ')
+
+        f.write('\n')
+
+    f.close()
+
+pat_pyramid()
+
+
+def pat_Ipyramid():
+    f=open('Aakash.txt','a+')
+    f.write('INVERSE PYRAMID TRIANGLE\n')
+
+    for i in range(5,0,-1):
+        for j in range(5,i,-1):
+            f.write(' ')
+
+        for k in range(1,i):
+            f.write('* ')
+
+        f.write('\n')
+
+    f.close()
+
+pat_Ipyramid()
+
+
+def rat_row():
+    f=open('Aakash.txt','a+')
+    f.write('RIGHT ANGLE TRIANGLE - ROW\n')
+
+    for i in range(1,6):
+        for j in range(0,i):
+            f.write(str(i))
+        f.write('\n')
+
+    f.close()
+
+rat_row()
+
+
+def rat_col():
+    f=open('Aakash.txt','a+')
+    f.write('RIGHT ANGLE TRIANGLE - COL\n')
+
+    for i in range(1,7):
+        for j in range(1,i):
+            f.write(str(j))
+        f.write('\n')
+
+    f.close()
+rat_col()
+
+
+def rat_Irow():
+    f=open('Aakash.txt','a+')
+    f.write('INVERSE RIGHT ANGLE TRIANGLE - ROW\n')
+
+    for i in range(5,0,-1):
+        for j in range(0,i):
+            f.write(str(i))
+        f.write('\n')
+
+    f.close()
+
+rat_Irow()
+
+
+def rat_Icol():
+    f=open('Aakash.txt','a+')
+    f.write('INVERSE RIGHT ANGLE TRIANGLE - COL\n')
+
+    for i in range(6,0,-1):
+        for j in range(1,i):
+            f.write(str(j))
+        f.write('\n')
+
+    f.close()
+
+rat_Icol()
+
+def rat_lower_row():
+    f=open('Aakash.txt','a+')
+    f.write('LOWER RIGHT ANGLE TRIANGLE - row\n')
+
+    for i in range(1,6):
+        for j in range(0,i):
+            f.write(chr(i+96))
+
+        f.write('\n')
+
+    f.close()
+
+rat_lower_row()
+
+
+def rat_lower_col():
+    f=open('Aakash.txt','a+')
+    f.write('LOWER RIGHT ANGLE TRIANGLE - col\n')
+
+    for i in range(1,6):
+        for j in range(1,i):
+            f.write(chr(j+96))
+
+        f.write('\n')
+
+    f.close()
+
+rat_lower_col()
+
+def rat_lower_Irow():
+    f=open('Aakash.txt','a+')
+
+    f.write('INVERSE LOWER RIGHT ANGLE TRIANGLE - row\n')
+
+    for i in range(5,0,-1):
+        for j in range(0,i):
+            f.write(chr(i+96))
+
+        f.write('\n')
+
+    f.close()
+
+rat_lower_Irow()
+
+
+def rat_lower_Icol():
+    f=open('Aakash.txt','a+')
+
+    f.write('INVERSE LOWER RIGHT ANGLE TRIANGLE - col\n')
+
+    for i in range(5,0,-1):
+        for j in range(1,i):
+            f.write(chr(j+96))
+
+        f.write('\n')
+
+    f.close()
+
+rat_lower_Icol()
+
+def rat_upper_row():
+    f=open('Aakash.txt','a+')
+
+    f.write('UPPER RIGHT ANGLE TRIANGLE - ROW\n')
+
+    for i in range(1,6):
+        for j in range(0,i):
+            f.write(chr(i+64))
+            # f.write(str(i))
+
+        f.write('\n')
+
+    f.close()
+
+rat_upper_row()
+
+def rat_upper_col():
+    f=open('Aakash.txt','a+')
+
+    f.write('UPPER RIGHT ANGLE TRIANGLE -COL\n')
+
+    for i in range(1,7):
+        for j in range(1,i):
+            f.write(chr(j+64))
+            # f.write(str(i))
+
+        f.write('\n')
+
+    f.close()
+
+rat_upper_col()
+
+def irat_upper_row():
+    f=open('Aakash.txt','a+')
+
+    f.write('INVERSE UPPER RAT ROW\n----------------\n')
+
+    for i in range(6,0,-1):
+        for j in range(0,i):
+            f.write(chr(i+64))
+            # f.write(str(i))
+
+        f.write('\n')
+
+    f.close()
+
+irat_upper_row()
+
+
+def irat_upper_col():
+    f=open('Aakash.txt','a+')
+
+    f.write('INVERSE UPPER RAT COL\n----------------\n')
+
+    for i in range(6,0,-1):
+        for j in range(1,i):
+            f.write(chr(j+64))
+            # f.write(str(i))
+
+        f.write('\n')
+
+    f.close()
+
+irat_upper_col()
+
+def rat_name_row():
+    name='DHONI'
+
+    f=open('Aakash.txt','a+')
+
+    f.write('RAT NAME ROW\n----------------\n')
+
+    for i in range(len(name)):
+        for j in range(i+1):
+            f.write(name[i])
+
+        f.write('\n')
+
+    f.close()
+
+rat_name_row()
+
+
+def rat_name_col():
+    name='Dhoni'
+
+    f=open('Aakash.txt','a+')
+
+    f.write('RAT NAME COL\n----------------\n')
+
+    for i in range(len(name)):
+        for j in range(i+1):
+            f.write(name[j])
+
+        f.write('\n')
+
+    f.close()
+
+rat_name_col()
+
