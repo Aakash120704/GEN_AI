@@ -1,0 +1,59 @@
+import pandas as pd
+
+print('Tech Gadgets Inventory')
+print('-' * 22)
+
+# 1. Initializing a list and converting to a Series
+gadgets = ['Smartphone', 'Laptop', 'Smartwatch', 'Wireless Earbuds', 'Tablet']
+series = pd.Series(gadgets)
+print(series)
+print(f"Original data type: {type(gadgets)}\n")
+
+# 2. Retrieving data and Slicing (Intrinsic / default integer index)
+print("--- Slicing & Retrieval (Default Index) ---")
+print("Item at index 1:", series.loc[1])
+print("Item at index 4:", series.loc[4])
+
+# Slicing from index 2 to the end
+print("\nSlicing from index 2 onwards:")
+print(series.loc[2:])
+
+# Slicing with a step (start:stop:step) -> indices 0 and 2
+print("\nSlicing with a step of 2 (index 0 to 3):")
+print(series.loc[0:3:2])
+print("\n" + "="*40 + "\n")
+
+
+# 3. Creating an extrinsic (user-defined) index representing Brand Names
+brands_index = ['Apple', 'Dell', 'Apple', 'Sony', 'Samsung']
+series_with_brands = pd.Series(gadgets, index=brands_index)
+
+print('Gadgets organized by Brand')
+print('-' * 26)
+print(series_with_brands)
+print("\n--- Retrieval using Custom Labels & iloc ---")
+
+# When an index is duplicated, .loc returns all matching rows as a sub-Series
+print("Retrieving all 'Apple' products:")
+print(series_with_brands.loc['Apple']) 
+
+# .iloc still works perfectly using the underlying integer positions
+print("\nRetrieving item at position 3 using .iloc:")
+print(series_with_brands.iloc[3])
+print("\n" + "="*40 + "\n")
+
+
+# 4. Creating a Pandas Series using a Dictionary (Specs & Prices)
+gadget_prices = {'iPhone 15': 799, 'MacBook Air': 999, 'Galaxy S24': 799, 'Sony WH': 399}
+price_series = pd.Series(gadget_prices)
+
+print('Gadget Prices (Created from Dictionary)')
+print('-' * 39)
+print(price_series)
+print(f"Original data type: {type(gadget_prices)}\n")
+
+print("--- Dictionary Series Retrieval ---")
+print("Price of iPhone 15:", price_series['iPhone 15'])
+print("Price of Sony headphones (using .loc):", price_series.loc['Sony WH-1000XM5'])
+print("Price of the 3rd item in the list (using .iloc):", price_series.iloc[2])
+
