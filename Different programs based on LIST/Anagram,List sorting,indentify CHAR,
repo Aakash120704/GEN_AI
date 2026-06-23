@@ -1,1 +1,77 @@
+#Find the common elements in list 
+list1=[2,6,9,15,20,99,77]
+list2=[5,12,39,2,45,15,20]
+
+common_value=set(list1)&set(list2)
+value=list(common_value)
+print("Common value in the list",value)
+
+
+#Find the common elements in list using string 
+list1 = ["apple", "banana", "Mango","Pineapple"]
+list2 = ["banana", "date", "cherry","Mango"]
+
+set2 = set(list2)
+common = list(filter(lambda x: x in set2, list1))
+
+print(common)
+
+#Count the number of vowels in the string 
+text = "Genrative ai"
+vowels = "aeiouAEIOU"
+count = 0
+
+for char in text:
+    if char in vowels:
+        count += 1
+
+print(count)
+
+#Sort the list in alphabetical order;
+words = ["cherry", "apple", "mango", "banana"]
+words.sort()
+print(words) 
+
+#Sort the list in alphabetical order;
+def value_list(string_list):
+
+    arr = list(string_list)
+    n = len(arr)
+    for i in range(n):
+        min_index = i
+        for j in range(i + 1, n):
+            if arr[j].lower() < arr[min_index].lower():
+                min_index = j
+                
+ 
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+        
+    return arr
+
+
+unordered_words = ["cherry", "Apple", "berry", "banana","mango"]
+ordered_words = value_list(unordered_words)
+
+print("Original:", unordered_words)
+print("Sorted:", ordered_words)
+
+#WRITE THE CODE TO CHECK THE STRING IN THE LIST IS ANAGRAM:
+def find_all_anagrams(words):
+    groups = {}
+    for word in words:
+        sorted_word = "".join(sorted(word.lower()))
+        if sorted_word not in groups:
+            groups[sorted_word] = []
+        groups[sorted_word].append(word)
+    result = []
+    for label in groups:
+        if len(groups[label]) > 1:
+            result.append(groups[label])
+            
+    return result
+
+
+word_list = ["rat", "tar", "apple", "art", "banana"]
+print(find_all_anagrams(word_list))
+
 
