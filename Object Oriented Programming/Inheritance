@@ -1,1 +1,66 @@
+class Vehicle:
+    def start(self):
+        print("Vehicle Started")
 
+class Car(Vehicle):
+    def drive(self):
+        print("Car is Driving")
+
+c = Car()
+c.start()
+c.drive()
+
+
+#Multi_Inheritance
+class Camera:
+    def click_photo(self):
+        print("Taking photo")
+
+class Phone:
+    def make_call(self):
+        print("Making call")
+
+class Smartphone(Camera, Phone):
+    pass
+
+s = Smartphone()
+s.click_photo()
+s.make_call()
+
+
+
+#Multiple_Inheritance
+class School:
+    def school_name(self):
+        print("ABC School")
+
+class Student(School):
+    def study(self):
+        print("Student studies")
+
+class Monitor(Student):
+    def manage_class(self):
+        print("Monitor manages class")
+
+m = Monitor()
+m.school_name()
+m.study()
+m.manage_class()
+
+
+#Hierarchical_inheritance
+class BankAccount:
+    def account_info(self):
+        print("Bank Account Details")
+
+class SavingsAccount(BankAccount):
+    pass
+
+class CurrentAccount(BankAccount):
+    pass
+
+s = SavingsAccount()
+c = CurrentAccount()
+
+s.account_info()
+c.account_info()
