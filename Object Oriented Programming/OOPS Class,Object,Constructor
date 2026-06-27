@@ -1,0 +1,77 @@
+#Creating Class and Object:
+
+print("Object Oriented Programming")
+class Car:
+    pass
+car1 = Car()
+print(car1)
+
+
+#Adding a Constructor;
+class Car:
+    def __init__(self):
+        print("Constructor is called.")
+
+car1 = Car()
+
+
+#Initialize the variable to the constructor;
+class Car:
+
+    def __init__(self):
+        self.brand = "Toyota"
+        self.color = "White"
+
+car1 = Car()
+
+print(car1.brand)
+print(car1.color)
+
+
+
+
+class Car:
+
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
+
+car1 = Car("Toyota", "White")
+car2 = Car("Hyundai", "Black")
+
+print(car1.brand)
+print(car2.brand)
+
+
+class Car:
+
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
+
+    def display(self):
+        print("Brand :", self.brand)
+        print("Color :", self.color)
+
+car1 = Car("Toyota", "White")
+car1.display()
+
+
+class Car:
+
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
+
+    def display(self):
+        print("Brand :", self.brand)
+        print("Color :", self.color)
+
+car1 = Car("Toyota", "White")
+car2 = Car("Hyundai", "Black")
+
+car1.display()
+
+print()
+
+car2.display()
