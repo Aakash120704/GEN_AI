@@ -1,0 +1,55 @@
+class Payment:
+    def __init__(self, customer_name, balance):
+        self.customer_name = customer_name
+        self.balance = balance
+
+    def display_balance(self):
+        print(f"\nCustomer Name : {self.customer_name}")
+        print(f"Available Balance : ₹{self.balance}")
+
+    def make_payment(self, amount):
+        if amount <= 0:
+            print("Invalid payment amount.")
+        elif amount > self.balance:
+            print("Payment Failed! Insufficient Balance.")
+        else:
+            self.balance -= amount
+            print(f"Payment of ₹{amount} Successful.")
+            print(f"Remaining Balance : ₹{self.balance}")
+
+    def add_money(self, amount):
+        if amount <= 0:
+            print("Invalid amount.")
+        else:
+            self.balance += amount
+            print(f"₹{amount} Added Successfully.")
+            print(f"Updated Balance : ₹{self.balance}")
+# Object Creation
+customer = Payment("Aakash", 5000)
+
+while True:
+    print("\n===== PAYMENT APPLICATION =====")
+    print("1. Check Balance")
+    print("2. Make Payment")
+    print("3. Add Money")
+    print("4. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        customer.display_balance()
+
+    elif choice == 2:
+        amount = float(input("Enter Payment Amount: ₹"))
+        customer.make_payment(amount)
+
+    elif choice == 3:
+        amount = float(input("Enter Amount to Add: ₹"))
+        customer.add_money(amount)
+
+    elif choice == 4:
+        print("Thank you for using the Payment Application.")
+        break
+
+    else:
+        print("Invalid Choice! Please try again.")
