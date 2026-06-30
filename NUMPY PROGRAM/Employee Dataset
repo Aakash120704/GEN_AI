@@ -1,0 +1,44 @@
+# Step 1: Import NumPy
+import numpy as np
+employees = np.array([
+    [101, 22, 25000],
+    [102, 24, 30000],
+    [103, 21, 28000],
+    [104, 25, 35000],
+    [105, 23, 32000]
+])
+
+print("Employee Dataset")
+print(employees)
+
+print("\nShape:", employees.shape)
+print("Dimensions:", employees.ndim)
+print("Size:", employees.size)
+print("\nFirst Employee:")
+print(employees[0])
+
+print("\nLast Employee:")
+print(employees[-1])
+
+print("\nFirst 3 Employees:")
+print(employees[:3])
+
+print("\nAge Column:")
+print(employees[:, 1])
+
+salary = employees[:, 2]
+
+print(" Ascending:")
+print(np.sort(salary))
+
+print("Descending:")
+print(np.sort(salary)[::-1])
+
+print("\nSalary Column:")
+print(employees[:, 2])
+
+
+print("\nMaximum Salary:", np.max(salary))
+print("Minimum Salary:", np.min(salary))
+print("Average Salary:", np.mean(salary))
+print("Total Salary:", np.sum(salary))
