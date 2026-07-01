@@ -1,0 +1,49 @@
+import numpy as np
+A = np.array([[17, 21, 3],
+              [4, 54, 6],
+              [7, 8, 99]])
+
+print("Matrix A:")
+print(A)
+
+B = np.array([[9, 8, 7],
+              [6, 5, 4],
+              [3, 2, 1]])
+
+print("Matrix B:")
+print(B)
+
+addition = A + B
+
+print("Matrix Addition:")
+print(addition)
+
+subtraction = A - B
+
+print("Matrix Subtraction:")
+print(subtraction)
+
+multiplication = np.dot(A, B)
+
+print("Matrix Multiplication:")
+print(multiplication)
+
+elementwise = A * B
+
+print("Element-wise Multiplication:")
+print(elementwise)
+
+transpose = A.T
+
+print("Transpose of Matrix A:")
+print(transpose)
+
+rows = A[:2]
+
+print("First Two Rows:")
+print(rows)
+
+maximum = np.max(A)
+
+print("Maximum Value:")
+print(maximum)
