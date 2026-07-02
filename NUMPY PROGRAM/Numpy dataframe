@@ -1,0 +1,110 @@
+import pandas as pd
+import numpy as np
+
+# Function to create employee DataFrame
+def create_dataframe():
+    data = {
+        "Emp_ID": [101, 102, 103, 104, 105, 106],
+        "Name": ["Aakash", "Rahul", "Priya", "Kiran", "Anu", "Riya"],
+        "Department": ["IT", "HR", "IT", "Sales", "HR", "IT"],
+        "Experience": [2, 5, 4, 3, 6, 1],
+        "Salary": [35000, 42000, 50000, 30000, 55000, 28000],
+        "Performance": [85, 78, 92, 70, 95, 80]
+    }
+    return pd.DataFrame(data)
+
+
+# Function to add bonus, total salary and rating
+def update_dataframe(df):
+    df["Bonus"] = df["Salary"] * 0.10
+    df["Total Salary"] = df["Salary"] + df["Bonus"]
+
+    df["Rating"] = np.where(
+        df["Performance"] >= 90, "Excellent",
+        np.where(df["Performance"] >= 80, "Good", "Average")
+    )
+    return df
+
+
+# Function for salary analysis
+def salary_analysis(df):
+    print("\n----- Salary Analysis -----")
+    print("Highest Salary :", np.max(df["Salary"]))
+    print("Lowest Salary  :", np.min(df["Salary"]))
+    print("Average Salary :", np.mean(df["Salary"]))
+    print("Median Salary  :", np.median(df["Salary"]))
+
+
+# Function for performance analysis
+def performance_analysis(df):
+    print("\n----- Performance Analysis -----")
+    print("Highest Performance :", np.max(df["Performance"]))
+    print("Lowest Performance  :", np.min(df["Performance"]))
+    print("Average Performance :", np.mean(df["Performance"]))
+
+
+# Function to filter data
+def filter_data(df):
+    avg_salary = np.mean(df["Salary"])
+
+    print("\n----- Employees with Above Average Salary -----")
+    print(df[df["Salary"] > avg_salary])
+
+    print("\n----- Top Performers -----")
+    print(df[df["Performance"] >= 90])
+
+    print("\n----- IT Department Employees -----")
+    print(df[df["Department"] == "IT"])
+
+
+# Function for sorting
+def sort_data(df):
+    print("\n----- Employees Sorted by Salary -----")
+    print(df.sort_values(by="Salary", ascending=False))
+
+
+# Function for department analysis
+def department_analysis(df):
+    print("\n----- Department-wise Average Salary -----")
+    print(df.groupby("Department")["Salary"].mean())
+
+    print("\n----- Department-wise Average Performance -----")
+    print(df.groupby("Department")["Performance"].mean())
+
+
+# Function for overall analysis
+def overall_analysis(df):
+    avg_salary = np.mean(df["Salary"])
+
+    print("\n----- Overall Analysis -----")
+    print("Total Employees :", len(df))
+    print("Highest Salary :", np.max(df["Salary"]))
+    print("Lowest Salary :", np.min(df["Salary"]))
+    print("Average Salary :", avg_salary)
+    print("Average Performance :", np.mean(df["Performance"]))
+    print("Employees Above Average Salary :", len(df[df["Salary"] > avg_salary]))
+    print("Top Performers :", len(df[df["Performance"] >= 90]))
+
+
+# Main Function
+def main():
+    df = create_dataframe()
+
+    print("===== Employee Data =====")
+    print(df)
+
+    df = update_dataframe(df)
+
+    print("\n===== Updated Employee Data =====")
+    print(df)
+
+    salary_analysis(df)
+    performance_analysis(df)
+    filter_data(df)
+    sort_data(df)
+    department_analysis(df)
+    overall_analysis(df)
+
+
+# Run the Program
+main()
