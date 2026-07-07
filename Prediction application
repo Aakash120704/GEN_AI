@@ -1,0 +1,28 @@
+# Import libraries
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+# Create dataset
+data = {
+    "Years_Experience": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "Salary": [25000, 30000, 36000, 42000, 50000,
+               58000, 66000, 74000, 82000, 90000]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Input and Output
+X = df[["Years_Experience"]]
+y = df["Salary"]
+
+# Train Model
+model = LinearRegression()
+model.fit(X, y)
+
+# Prediction
+experience = float(input("Enter Years of Experience: "))
+predicted_salary = model.predict([[experience]])
+
+# Output
+print("Predicted Salary: ₹", round(predicted_salary[0], 2))
