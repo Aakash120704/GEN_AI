@@ -1,0 +1,44 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+data = {
+    "Credit_Score": [600, 750, 500, 710, 680],
+    "Income": [50, 80, 35, 90, 60],
+    "Approved": [0, 1, 0, 1, 1],
+}
+
+df = pd.DataFrame(data)
+
+X = df[["Credit_Score", "Income"]]
+y = df["Approved"]
+
+model = DecisionTreeClassifier(max_depth=2, random_state=42)
+model.fit(X, y)
+
+df["Predicted_Approval"] = model.predict(X)
+
+print("--- Dataframe with Final Predictions ---")
+print(df)
+print("-" * 40)
+
+new_applicant = [[700, 75]]
+prediction = model.predict(new_applicant)
+result = "Approved " if prediction[0] == 1 else "Rejected"
+print(f"\nNew Applicant Result: {result}\n")
+
+total_actual_approved = df["Approved"].sum()
+total_predicted_approved = df["Predicted_Approval"].sum()
+
+categories = ["Actual Approvals", "Model Predictions"]
+counts = [total_actual_approved, total_predicted_approved]
+
+plt.figure(figsize=(6, 5))
+plt.bar(categories, counts, color=["skyblue", "lightcoral"], width=0.5)
+
+plt.title("Total Loan Approvals: Actual vs. Predicted")
+plt.ylabel("Number of Applicants")
+plt.ylim(0, 5)  # Set limit based on our small dataset size
+plt.grid(axis="y", linestyle="--", alpha=0.7)
+
+plt.show()
