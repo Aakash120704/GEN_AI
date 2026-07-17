@@ -1,0 +1,26 @@
+from bs4 import BeautifulSoup
+import urllib.request
+import nltk
+import matplotlib.pyplot as plt
+
+data = urllib.request.urlopen("https://jupyter.org")
+content = data.read()
+soup = BeautifulSoup(content, "html.parser")
+content_data = soup.get_text(strip=True)
+s_data = [i for i in content_data.split()]
+fq = nltk.FreqDist(s_data)
+for k, v in fq.items():
+    print(str(k), ":", str(v))
+
+top_words = fq.most_common(20)
+
+words = [word for word, count in top_words]
+counts = [count for word, count in top_words]
+
+plt.figure(figsize=(10,5))
+plt.bar(words, counts)
+plt.title("Top 10 Most Frequent Words in GitHub Website")
+plt.xlabel("Words")
+plt.ylabel("Frequency")
+plt.xticks(rotation=45)
+plt.show()
